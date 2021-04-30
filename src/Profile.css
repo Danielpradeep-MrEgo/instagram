@@ -1,0 +1,57 @@
+.profile {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  left: 0;
+  padding: 30px;
+  margin-left: -240px;
+  flex: 1;
+}
+
+.profile > .MuiAvatar-root {
+  height: 150px;
+  width: 150px;
+}
+
+.profile__rightMain {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+
+.profile__rightTop > h2 {
+  font-weight: 400;
+}
+
+.profile__rightTop {
+  display: flex;
+  align-items: center;
+}
+
+.profile__rightTop > button {
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  padding: 7px;
+  margin: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profile__rightDown {
+  display: flex;
+  padding-top: 10px;
+}
+
+.profile__rightDown > span {
+  align-items: center;
+  font-weight: 500;
+  padding-right: 20px;
+}
+
+.profile__rightDesc {
+  padding-top: 20px;
+}
+
+.profile__rightDesc > h4 {
+  padding-bottom: 2px;
+}

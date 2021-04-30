@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+.header {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  align-items: center;
+  padding-bottom: 5px;
+  justify-content: space-between;
+}
+
+.header > img {
+  padding-top: 8px;
+  padding-left: -5px;
+  height: 40px;
+  width: 150px;
+  object-fit: contain;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+}
+
+.header__search > input {
+  outline: none;
+  padding-left: 50px;
+  width: 50%;
+  height: 22px;
+  font-weight: 500;
+  border-top-color: 1px solid #d31313;
+  border-right-color: 1px solid #d31313;
+  border-bottom-color: 1px solid #d31313;
+  border-left-color: 1px solid #d31313;
+}
+
+.header__search > .MuiSvgIcon-root {
+  position: absolute;
+  font-size: 15px;
+  color: #bdbdbd;
+  padding-left: 35px;
+}
+
+.header__Icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 20px;
+}
+
+.header__Icons > .MuiSvgIcon-root {
+  display: flex;
+  font-size: 30px;
+  justify-content: space-between;
+  padding-right: 13px;
+}
+
+.header__Icons > .MuiAvatar-root {
+  display: flex;
+  height: 25px;
+  width: 25px;
+}

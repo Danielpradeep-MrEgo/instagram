@@ -1,0 +1,25 @@
+.status {
+  display: flex;
+  /* margin: 30px; */
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  flex: 1;
+  padding: 20px;
+  border-radius: 3px;
+  width: 600px;
+  height: 80px;
+  overflow-x: scroll;
+}
+
+.status::-webkit-scrollbar {
+  display: none;
+}
+
+.status > .MuiAvatar-root {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-right: 15px;
+  height: 55px;
+  width: 55px;
+}

@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
+import { auth } from "./firebase";
+import Header from "./Header";
+import Login from "./Login";
+import { useStateValue } from "./StateProvider";
+import { actionTypes } from "./reducer";
+import Status from "./Status";
+import Post from "./Post";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Profile from "./Profile";
 
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      dispatch({
+        type: actionTypes.SET_USER,
+        user: auth.user,
+      });
+    });
+  }, []);
+
+  console.log(user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <div className="app">
+          {!user ? (
+            <Login />
+          ) : (
+            <div className="app_header">
+              <Header />
+              <div className="app_center">
+                <Route path="/" exact>
+                  <Status />
+                  <Post />
+                </Route>
+
+                <Route path="/profile" exact>
+                  <Profile />
+                </Route>
+              </div>
+            </div>
+          )}
+        </div>
+      </Switch>
+    </Router>
   );
 }
 
